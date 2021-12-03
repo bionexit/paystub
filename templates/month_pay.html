@@ -1,0 +1,200 @@
+<html>
+    <head>
+        <style>
+            .bc{ line-height:50px}
+            #customers {
+              font-family: Arial, Helvetica, sans-serif;
+              border-collapse: collapse;
+              width: 100%;
+              
+            }
+            
+            #customers td, #customers th {
+              border: 1px solid #ddd;
+              padding: 8px;
+            }
+            
+            #customers tr:nth-child(even){background-color: #f2f2f2;}
+            
+            #customers tr:hover {background-color: #ddd;}
+            
+            #customers th {
+              padding-top: 12px;
+              padding-bottom: 12px;
+              text-align: left;
+              background-color: #e61a1a;
+              color: white;
+            }
+            </style>
+    </head>
+    <body>
+        <div class = "bc">{{ main_content["name"] }}，您好，以下是您{{ main_content["year"] }}年{{ main_content["month"] }}月工资单，请及时查收并核对！</div>
+        <div>
+            <table style="width: 100%;border-collapse: collapse;font: size 12px;" border="1" id='customers'>
+                <tr style="background-color: #e61a1a;color:white" >
+                    <th width='70%'>工资项目名称</th>
+                    <th width='30%'>金额</th>
+                </tr>
+                <tr>
+                    <td>标准</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;年薪标准</td>
+                    <td>{{ data_dict["nxbz"] }}</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;月薪标准</td>
+                    <td>{{ data_dict["yxbz"] }}</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;绩效比例</td>
+                    <td>{{ data_dict["jxbl"] }}</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;固定比例</td>
+                    <td>{{ data_dict["gdbl"] }}</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;固定工资增加</td>
+                    <td>{{ data_dict["gdgzzj"] }}</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;固定工资合计</td>
+                    <td>{{ data_dict["gdgzhj"] }}</td>
+                </tr>
+                <tr>
+                    <td>绩效工资（预发30%）</td>
+                    <td>{{ data_dict["jxgz"] }}</td>
+                </tr>
+                <tr>
+                    <td>福利补助</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;交通补助标准</td>
+                    <td>{{ data_dict["jtbzbz"] }}</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;通讯补助标准</td>
+                    <td>{{ data_dict["txbzbz"] }}</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;福利补助标准合计</td>
+                    <td>{{ data_dict["flbzbzhj"] }}</td>
+                </tr>
+                <tr>
+                    <td>应发福利津贴</td>
+                    <td>{{ data_dict["yffljt"] }}</td>
+                </tr>
+                <tr>
+                    <td>误餐津贴</td>
+                    <td>{{ data_dict["wcjt"] }}</td>
+                </tr>
+                <tr>
+                    <td>驻村津贴</td>
+                    <td>{{ data_dict["zcjt"] }}</td>
+                </tr>
+                <tr>
+                    <td>法定津贴（寒暑降温费/冬季取暖补贴）</td>
+                    <td>{{ data_dict["fdjt"] }}</td>
+                </tr>
+                <tr>
+                    <td>津贴合计</td>
+                    <td>{{ data_dict["jthj"] }}</td>
+                </tr>
+                <tr>
+                    <td>应发</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;值班费</td>
+                    <td>{{ data_dict["zbf"] }}</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;其他应发</td>
+                    <td>{{ data_dict["qtyf"] }}</td>
+                </tr>
+                <tr>
+                    <td>考勤误工（不含带薪假）</td>
+                    <td>{{ data_dict["kqwg"] }}</td>
+                </tr>
+                <tr>
+                    <td>应扣</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;应扣考勤工资(含迟到早退、病事假）</td>
+                    <td>{{ data_dict["ykkqgz"] }}</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;其他应扣(含产假期间社保等）</td>
+                    <td>{{ data_dict["qtyk"] }}</td>
+                </tr>
+                <tr>
+                    <td>当月应发工资</td>
+                    <td>{{ data_dict["dyyfgz"] }}</td>
+                </tr>
+                <tr>
+                    <td>应发总收入（对应个税）</td>
+                    <td>{{ data_dict["yfzsr"] }}</td>
+                </tr>
+                <tr>
+                    <td>个人缴费合计</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;个人缴养老金8%</td>
+                    <td>{{ data_dict["grylj"] }}</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;个人缴医疗保险金2%</td>
+                    <td>{{ data_dict["grylbxj"] }}</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;个人缴失业保险金0.5%</td>
+                    <td>{{ data_dict["grsybxj"] }}</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;社保大额</td>
+                    <td>{{ data_dict["sbde"] }}</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;个人社保合计</td>
+                    <td>{{ data_dict["grsbhj"] }}</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;个人住房公积金12%</td>
+                    <td>{{ data_dict["grzfgjj"] }}</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;个人缴费合计</td>
+                    <td>{{ data_dict["grjfhj"] }}</td>
+                </tr>
+
+                <tr>
+                    <td>预扣个税</td>
+                    <td>{{ data_dict["ykgs"] }}</td>
+                </tr>
+                <tr>
+                    <td>初步实发合计</td>
+                    <td>{{ data_dict["cbsfhj"] }}</td>
+                </tr>
+                <tr>
+                    <td>代缴个人工会会费</td>
+                    <td>{{ data_dict["djgrghhf"] }}</td>
+                </tr>
+                <tr>
+                    <td>实发合计</td>
+                    <td>{{ data_dict["sfhj"] }}</td>
+                </tr>
+
+
+                
+
+            </table>
+        </div>
+
+
+    </body>
+</html>
