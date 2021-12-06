@@ -64,9 +64,7 @@ def send_email(to, sender='MyCompanyName<noreply@mycompany.com>', cc=None, bcc=N
     mail_user = conf.get("email", "mail_user")
     mail_pass = conf.get("email", "mail_pass")
     
-    # mail_host='smtp.exmail.qq.com'  # 设置发送服务器
-    # mail_user = 'wangheng@tjotc.com.cn'  # 登录邮箱名
-    # mail_pass = 'VEUmEgiQnWq3SrGi'  # 口令（授权码）
+
     logs = Logger('邮件发送')
     msg.attach(MIMEText(body, 'html'))
     server = smtplib.SMTP_SSL(mail_host,465) # or your smtp server
