@@ -85,7 +85,6 @@ def month_pay(year,month):
         
         html = sendmail.render_template(template,main_content=main_content,data_dict=data_dict)
         to_list = main_content["email"]
-        # sender = 'wangheng@tjotc.com.cn'
         cc = ''
         bcc = ''
         subject = '%s %s年%s月工资条' % (main_content["name"],main_content["year"],main_content["month"])

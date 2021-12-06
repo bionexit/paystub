@@ -11,6 +11,10 @@ class Logger:
 
         self.logger.setLevel(logging.INFO) # 需要记录的日志级别
         basedir = os.path.abspath(os.path.dirname(__file__))
+        log_base_path = os.path.join(basedir,'logs') # 日志根目录
+        if not os.path.exists(log_base_path):
+            os.mkdir(log_base_path)
+            
         log_path = os.path.join(basedir, 'logs', time.strftime("%F"))  # 日志根目录 ../logs/yyyy-mm-dd/
 
         if not os.path.exists(log_path):
